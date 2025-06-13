@@ -23,7 +23,7 @@ if(NOT TARGET ${PROJECT_NAME})
     ae2fCL_CoreAppendInclude(${PROJECT_SOURCE_DIR}/include)
     ae2f_CoreUtilityDocTent(${PROJECT_NAME} cmake ae2fCL Core)
 
-    if(${ae2f_TEST})
+    if(${ae2f_TEST} AND ${ae2fCL_needed})
         find_package(OpenCL REQUIRED) 
         ae2fCL_CoreTestTent(${PROJECT_NAME} test OpenCL::OpenCL)
     endif()
